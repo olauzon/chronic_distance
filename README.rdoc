@@ -1,0 +1,78 @@
+= Chronic Distance
+
+A simple Ruby natural language parser for distances. Given a parse-able string distance, it returns the distance in millimeters.
+
+The reverse can also be accomplished with the output method.  Given a distance in millimeters, it outputs a string like "4 kilometers" or "4km" depending on the desired format.
+
+
+== Installation
+
+    $ sudo gem sources -a http://gems.github.com
+    $ sudo gem install olauzon-chronic_distance
+
+
+== Usage
+
+    >> require 'chronic_distance'
+    => true
+
+===Parsing examples
+
+    >> ChronicDistance.parse('5 kilometers')
+    => 5000000
+    
+    >> ChronicDistance.parse('4 miles')
+    => 6437376
+    
+    >> ChronicDistance.parse('four miles')
+    => 6437376
+    
+    >> ChronicDistance.parse('1000m')
+    => 1000000
+    
+    >> ChronicDistance.parse('1000 meters')
+    => 1000000
+    
+    >> ChronicDistance.parse('ten yards')
+    => 9144.0
+    
+    >> ChronicDistance.parse('500 feet')
+    => 152400.0
+
+Nil is returned if the string can't be parsed:
+
+    >> ChronicDistance.parse('kilometers')
+    => nil
+
+===Output examples
+
+    >> ChronicDistance.output(5000000)
+    => 5000000 mm
+
+    >> ChronicDistance.output(5000000, :format => :short, :unit => 'kilometers')
+    => 5km
+
+    >> ChronicDistance.output(5000000, :format => :long, :unit => 'kilometers')
+    => 5 kilometers
+
+    >> ChronicDistance.output(5000000, :unit => 'meters')
+    => 5000 m
+
+    >> ChronicDistance.output(5000000, :format => :long, :unit => 'miles')
+    => 3.10685596118667 miles
+
+
+== Inspiration
+
+ChronicDistance borrows heavily from:
+
+* hpoydar's ChronicDuration http://github.com/hpoydar/chronic_duration
+* mojombo's Chronic http://github.com/mojombo/chronic
+
+
+== TODO
+
+* Benchmark, optimize
+* Other locale support
+
+Copyright (c) 2009 Olivier Lauzon. See MIT-LICENSE for details.
