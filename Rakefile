@@ -4,10 +4,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "chronic_distance"
-    s.summary = %Q{TODO}
+    s.summary = %Q{A simple Ruby natural language parser for distances.}
     s.email = "olauzon@gmail.com"
     s.homepage = "http://github.com/olauzon/chronic_distance"
-    s.description = "TODO"
+    s.description = "A simple Ruby natural language parser for distances."
     s.authors = ["Olivier Lauzon"]
   end
 rescue LoadError
