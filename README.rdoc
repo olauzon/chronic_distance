@@ -7,8 +7,7 @@ The reverse can also be accomplished with the output method.  Given a distance i
 
 == Installation
 
-    $ sudo gem sources -a http://gems.github.com
-    $ sudo gem install olauzon-chronic_distance
+    $ gem install chronic_distance
 
 
 == Usage
